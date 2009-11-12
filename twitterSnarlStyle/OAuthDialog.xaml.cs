@@ -4,6 +4,7 @@ using Dimebrain.TweetSharp.Extensions;
 using Dimebrain.TweetSharp.Model;
 using twitterSnarlStyle.Properties;
 
+
 namespace twitterSnarlStyle
 {
     /// <summary>
@@ -85,6 +86,7 @@ namespace twitterSnarlStyle
             Settings.Default.AccessToken = result.Token;
             Settings.Default.AccessTokenSecret = result.TokenSecret;
             Settings.Default.Save();
+            
             this.DialogResult = true;
             Close();
         }

@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Windows.Forms;
+using System.Windows;
+//using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using libSnarlStyles;
 
@@ -41,20 +42,23 @@ namespace twitterSnarlStyle
             bool authorized = false;
             try
             {
+
                 var twitter = FluentTwitter.CreateRequest()
                     .AuthenticateWith(Settings.Default.ConsumerKey, Settings.Default.ConsumerSecret,
                                       Settings.Default.AccessToken, Settings.Default.AccessTokenSecret)
                     .Account().VerifyCredentials();
                 var response = twitter.Request();
                 var profile = response.AsUser();
+
                 if (profile != null)
                 {
                     authorized = true;
                 }
             }
-            catch
+            catch (Exception exp)
             {
-                // not online, broken connection to Twitter, ...
+                MessageBox.Show(exp.Message + "\n\n" + exp.StackTrace, "Error in communication with Twitter",
+MessageBoxButton.OK, MessageBoxImage.Error);
             }
             return authorized;
         }
@@ -94,11 +98,7 @@ namespace twitterSnarlStyle
             {
                 authorized = VerifyOAuthCredentials();
             }
-            else
-            {
-               /* AuthStatusLabel.Content = "Auth tokens not found.";
-                AuthStatusLabel.Foreground = Brushes.Red; */
-            }
+
             return authorized;
         }
          
@@ -164,7 +164,7 @@ namespace twitterSnarlStyle
             }
             catch
             {
-                MessageBox.Show("Error in sending notification to Twitter", "Error sending to Twitter", MessageBoxButtons.OK);
+                MessageBox.Show("Error in sending notification to Twitter", "Error sending to Twitter", MessageBoxButton.OK);
             }
 
    

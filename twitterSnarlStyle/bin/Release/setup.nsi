@@ -83,7 +83,7 @@ Var StartMenuFolder
   VIAddVersionKey /LANG=${LANG_ENGLISH} "CompanyName" "Tlhan Ghun"
   VIAddVersionKey /LANG=${LANG_ENGLISH} "LegalCopyright" "© 2009 Tlhan Ghun GPL v.3"
   VIAddVersionKey /LANG=${LANG_ENGLISH} "FileDescription" "Forwards Snarl notifications to Twitter"
-  VIAddVersionKey /LANG=${LANG_ENGLISH} "FileVersion" "1.0"
+  VIAddVersionKey /LANG=${LANG_ENGLISH} "FileVersion" "1.1"
 
 
 

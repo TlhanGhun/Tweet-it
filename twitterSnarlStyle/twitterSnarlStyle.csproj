@@ -38,7 +38,8 @@
     <RegisterForComInterop>false</RegisterForComInterop>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Dimebrain.TweetSharp, Version=1.0.14.37163, Culture=neutral, PublicKeyToken=c148cfba29ed1a4d, processorArchitecture=MSIL" />
+    <Reference Include="Dimebrain.TweetSharp, Version=1.0.16.0, Culture=neutral, PublicKeyToken=c148cfba29ed1a4d, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=3.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" />
     <Reference Include="PresentationCore">
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
     </Reference>
@@ -125,15 +126,23 @@
     <Resource Include="blueBird.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Content Include="TweetSharp\Dimebrain.TweetSharp.dll" />
-    <Content Include="TweetSharp\Dimebrain.TweetSharp.xml" />
-    <Content Include="TweetSharp\Newtonsoft.Json.dll" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="OAuthDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TweetSharp\Dimebrain.TweetSharp.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TweetSharp\Dimebrain.TweetSharp.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TweetSharp\Newtonsoft.Json.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

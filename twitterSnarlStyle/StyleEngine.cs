@@ -40,7 +40,7 @@ namespace twitterSnarlStyle
         [ComVisible(true)]
         string IStyleEngine.Date()
         {
-            return "2009-07-20";
+            return "2009-11-12";
         }
 
         [ComVisible(true)]
@@ -86,7 +86,7 @@ namespace twitterSnarlStyle
         [ComVisible(true)]
         int IStyleEngine.Revision()
         {
-            return 1;
+            return 2;
         }
 
         [ComVisible(true)]
@@ -98,7 +98,7 @@ namespace twitterSnarlStyle
             Style.Flags = S_STYLE_FLAGS.S_STYLE_IS_WINDOWLESS;
             Style.IconPath = pathToIcon;
             Style.Major = 1;
-            Style.Minor = 0;
+            Style.Minor = 1;
             Style.Name = "Tweet it";
             Style.Path = Assembly.GetExecutingAssembly().CodeBase;
             Style.Schemes = "Standard";
